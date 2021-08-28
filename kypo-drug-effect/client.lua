@@ -30,6 +30,7 @@ function DisplayNotification( text )
   DrawNotification( false, false )
 end
 
+-- EFFECTS
 function coke()
   local playerPed = GetPlayerPed(-1)
   local playerPed = PlayerPedId()
@@ -58,6 +59,7 @@ function coke()
     SetTimecycleModifierStrength(0.0)
 end
 
+-- EVENTS
 RegisterNetEvent('kypo-drug-effect:onCoke')
 AddEventHandler('kypo-drug-effect:onCoke', coke)
 
