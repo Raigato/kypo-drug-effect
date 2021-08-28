@@ -24,6 +24,12 @@ TriggerEvent('esx:getSharedObject', function(obj)
 end)
 --SetPedMovementClipset(GetPlayerPed(-1), "move_m@quick", true)
 
+function DisplayNotification( text )
+  SetNotificationTextEntry( "STRING" )
+  AddTextComponentString( text )
+  DrawNotification( false, false )
+end
+
 function coke()
   local playerPed = GetPlayerPed(-1)
   local playerPed = PlayerPedId()
@@ -32,7 +38,7 @@ function coke()
     while not HasAnimSetLoaded("MOVE_M@QUICK") do
       Citizen.Wait(0)
     end    
-    exports['mythic_notify']:DoHudText('success', 'You took some coke!')
+    DisplayNotification('You took some coke!')
     TaskStartScenarioInPlace(playerPed, "WORLD_HUMAN_SMOKING_POT", 0, 1)
     Citizen.Wait(3000)
     ClearPedTasksImmediately(playerPed)
@@ -69,7 +75,7 @@ AddEventHandler('kypo-drug-effect:onWeed', function()
     while not HasAnimSetLoaded("MOVE_M@DRUNK@VERYDRUNK") do
       Citizen.Wait(0)
     end    
-    exports['mythic_notify']:DoHudText('success', 'You took some weed!')
+    DisplayNotification('You took some weed!')
     TaskStartScenarioInPlace(playerPed, "WORLD_HUMAN_SMOKING_POT", 0, 1)
     Citizen.Wait(3000)
     ClearPedTasksImmediately(playerPed)
@@ -107,7 +113,7 @@ AddEventHandler('kypo-drug-effect:onHeroin', function()
     while not HasAnimSetLoaded("move_m@hobo@a") do
       Citizen.Wait(0)
     end    
-    exports['mythic_notify']:DoHudText('success', 'You took some Heroin!')
+    DisplayNotification('You took some Heroin!')
     TaskStartScenarioInPlace(playerPed, "WORLD_HUMAN_SMOKING_POT", 0, 1)
     Citizen.Wait(3000)
     ClearPedTasksImmediately(playerPed)
@@ -145,7 +151,7 @@ AddEventHandler('kypo-drug-effect:onLsd', function()
     while not HasAnimSetLoaded("move_m@buzzed") do
       Citizen.Wait(0)
     end    
-    exports['mythic_notify']:DoHudText('success', 'You took some LSD!')
+    DisplayNotification('You took some LSD!')
     TaskStartScenarioInPlace(playerPed, "WORLD_HUMAN_SMOKING_POT", 0, 1)
     Citizen.Wait(3000)
     ClearPedTasksImmediately(playerPed)
@@ -182,7 +188,7 @@ AddEventHandler('kypo-drug-effect:onMeth', function()
     while not HasAnimSetLoaded("move_m@drunk@slightlydrunk") do
       Citizen.Wait(0)
     end    
-    exports['mythic_notify']:DoHudText('success', 'You took some Meth!')
+    DisplayNotification('You took some Meth!')
     TaskStartScenarioInPlace(playerPed, "WORLD_HUMAN_SMOKING_POT", 0, 1)
     Citizen.Wait(3000)
     ClearPedTasksImmediately(playerPed)
@@ -219,7 +225,7 @@ AddEventHandler('kypo-drug-effect:onLsa', function()
     while not HasAnimSetLoaded("move_m@buzzed") do
       Citizen.Wait(0)
     end    
-    exports['mythic_notify']:DoHudText('success', 'You took some LSA!')
+    DisplayNotification('You took some LSA!')
     TaskStartScenarioInPlace(playerPed, "WORLD_HUMAN_SMOKING_POT", 0, 1)
     Citizen.Wait(3000)
     ClearPedTasksImmediately(playerPed)
