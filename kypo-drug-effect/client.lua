@@ -59,13 +59,7 @@ function coke()
     SetTimecycleModifierStrength(0.0)
 end
 
--- // EVENTS
-RegisterNetEvent('kypo-drug-effect:onCoke')
-AddEventHandler('kypo-drug-effect:onCoke', coke)
-
-RegisterNetEvent('kypo-drug-effect:onWeed')
-AddEventHandler('kypo-drug-effect:onWeed', function()
-  
+function weed()
   local playerPed = GetPlayerPed(-1)
   local playerPed = PlayerPedId()
   
@@ -96,11 +90,9 @@ AddEventHandler('kypo-drug-effect:onWeed', function()
     AnimpostfxStopAll()
     ShakeGameplayCam("DRUNK_SHAKE", 0.0)
     SetTimecycleModifierStrength(0.0)
-end)
+end
 
-RegisterNetEvent('kypo-drug-effect:onHeroin')
-AddEventHandler('kypo-drug-effect:onHeroin', function()
-  
+function heroin()  
   local playerPed = GetPlayerPed(-1)
   local playerPed = PlayerPedId()
   
@@ -131,11 +123,9 @@ AddEventHandler('kypo-drug-effect:onHeroin', function()
     AnimpostfxStopAll()
     ShakeGameplayCam("DRUNK_SHAKE", 0.0)
     SetTimecycleModifierStrength(0.0)
-end)
+end
 
-RegisterNetEvent('kypo-drug-effect:onLsd')
-AddEventHandler('kypo-drug-effect:onLsd', function()
-  
+function lsd()
   local playerPed = GetPlayerPed(-1)
   local playerPed = PlayerPedId()
   
@@ -166,11 +156,9 @@ AddEventHandler('kypo-drug-effect:onLsd', function()
     AnimpostfxStopAll()
     ShakeGameplayCam("DRUNK_SHAKE", 0.0)
     SetTimecycleModifierStrength(0.0)
-end)
+end
 
-RegisterNetEvent('kypo-drug-effect:onMeth')
-AddEventHandler('kypo-drug-effect:onMeth', function()
-  
+function meth()
   local playerPed = GetPlayerPed(-1)
   local playerPed = PlayerPedId()
   
@@ -201,10 +189,9 @@ AddEventHandler('kypo-drug-effect:onMeth', function()
     AnimpostfxStopAll()
     ShakeGameplayCam("DRUNK_SHAKE", 0.0)
     SetTimecycleModifierStrength(0.0)
-end)
+end
 
-RegisterNetEvent('kypo-drug-effect:onLsa')
-AddEventHandler('kypo-drug-effect:onLsa', function()
+function lsa()
   
   local playerPed = GetPlayerPed(-1)
   local playerPed = PlayerPedId()
@@ -236,7 +223,26 @@ AddEventHandler('kypo-drug-effect:onLsa', function()
     AnimpostfxStopAll()
     ShakeGameplayCam("DRUNK_SHAKE", 0.0)
     SetTimecycleModifierStrength(0.0)
-end)
+end
+
+-- // EVENTS
+RegisterNetEvent('kypo-drug-effect:onCoke')
+AddEventHandler('kypo-drug-effect:onCoke', coke)
+
+RegisterNetEvent('kypo-drug-effect:onWeed')
+AddEventHandler('kypo-drug-effect:onWeed', weed)
+
+RegisterNetEvent('kypo-drug-effect:onHeroin')
+AddEventHandler('kypo-drug-effect:onHeroin', heroin)
+
+RegisterNetEvent('kypo-drug-effect:onLsd')
+AddEventHandler('kypo-drug-effect:onLsd', lsd)
+
+RegisterNetEvent('kypo-drug-effect:onMeth')
+AddEventHandler('kypo-drug-effect:onMeth', meth)
+
+RegisterNetEvent('kypo-drug-effect:onLsa')
+AddEventHandler('kypo-drug-effect:onLsa', lsa)
 
 -- // COMMANDS
 RegisterCommand("coke", function(source,args,rawCommand)
