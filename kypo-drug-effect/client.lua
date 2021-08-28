@@ -1,4 +1,4 @@
-DURATION = 60*1000*2.5
+DURATION = 60*1000*1.0
 ESX              = nil
 local PlayerData = {}
 
@@ -30,7 +30,7 @@ function DisplayNotification( text )
   DrawNotification( false, false )
 end
 
--- EFFECTS
+-- // EFFECTS
 function coke()
   local playerPed = GetPlayerPed(-1)
   local playerPed = PlayerPedId()
@@ -59,7 +59,7 @@ function coke()
     SetTimecycleModifierStrength(0.0)
 end
 
--- EVENTS
+-- // EVENTS
 RegisterNetEvent('kypo-drug-effect:onCoke')
 AddEventHandler('kypo-drug-effect:onCoke', coke)
 
@@ -238,7 +238,7 @@ AddEventHandler('kypo-drug-effect:onLsa', function()
     SetTimecycleModifierStrength(0.0)
 end)
 
--- COMMANDS
+-- // COMMANDS
 RegisterCommand("coke", function(source,args,rawCommand)
   coke()
 end, false)
