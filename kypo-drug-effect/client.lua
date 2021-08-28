@@ -1,3 +1,4 @@
+DURATION = 60*1000*2.5
 ESX              = nil
 local PlayerData = {}
 
@@ -23,9 +24,7 @@ TriggerEvent('esx:getSharedObject', function(obj)
 end)
 --SetPedMovementClipset(GetPlayerPed(-1), "move_m@quick", true)
 
-RegisterNetEvent('kypo-drug-effect:onCoke')
-AddEventHandler('kypo-drug-effect:onCoke', function()
-  
+function coke()
   local playerPed = GetPlayerPed(-1)
   local playerPed = PlayerPedId()
   
@@ -55,7 +54,10 @@ AddEventHandler('kypo-drug-effect:onCoke', function()
     AnimpostfxStopAll()
     ShakeGameplayCam("DRUNK_SHAKE", 0.0)
     SetTimecycleModifierStrength(0.0)
-end)
+end
+
+RegisterNetEvent('kypo-drug-effect:onCoke')
+AddEventHandler('kypo-drug-effect:onCoke', coke)
 
 RegisterNetEvent('kypo-drug-effect:onWeed')
 AddEventHandler('kypo-drug-effect:onWeed', function()
@@ -243,3 +245,8 @@ AddEventHandler('kypo-drug-effect:onLsa', function()
     ShakeGameplayCam("DRUNK_SHAKE", 0.0)
     SetTimecycleModifierStrength(0.0)
 end)
+
+-- COMMANDS
+RegisterCommand("coke", function(source,args,rawCommand)
+  coke()
+end, false)
