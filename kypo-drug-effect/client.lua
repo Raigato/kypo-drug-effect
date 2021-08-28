@@ -224,6 +224,7 @@ function sober()
   AnimpostfxStopAll()
   ShakeGameplayCam("DRUNK_SHAKE", 0.0)
   SetTimecycleModifierStrength(0.0)
+end
 
 -- // EVENTS
 RegisterNetEvent('kypo-drug-effect:onCoke')
