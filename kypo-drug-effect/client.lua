@@ -48,7 +48,7 @@ function coke()
     SetPedIsDrunk(playerPed, true)
     AnimpostfxPlay("DrugsMichaelAliensFight", 10000001, true)
     ShakeGameplayCam("DRUNK_SHAKE", 3.0)
-    Citizen.Wait(100000)
+    Citizen.Wait(DURATION)
 -- after wait stop all 
     SetPedIsDrunk(GetPlayerPed(-1), false)		
     SetPedMotionBlur(playerPed, false)
@@ -85,7 +85,7 @@ AddEventHandler('kypo-drug-effect:onWeed', function()
     SetEntityHealth(GetPlayerPed(-1), 200)
     SetPedArmour(PlayerPedId(), 50)
 --vvvvvvvvvvvvvvvv
-    Citizen.Wait(100000)
+    Citizen.Wait(DURATION)
 --^^^^^^^^^^^^^^^^
 --Time of effect
 --  after wait stop all effects
@@ -123,7 +123,7 @@ AddEventHandler('kypo-drug-effect:onHeroin', function()
     SetEntityHealth(GetPlayerPed(-1), 150)
     SetPedArmour(PlayerPedId(), 100)
 --vvvvvvvvvvvvvvvv
-    Citizen.Wait(100000)
+    Citizen.Wait(DURATION)
 --^^^^^^^^^^^^^^^^
 --Time of effect
 --  after wait stop all effects
@@ -160,7 +160,7 @@ AddEventHandler('kypo-drug-effect:onLsd', function()
 	
     SetEntityHealth(GetPlayerPed(-1), 200)
 --vvvvvvvvvvvvvvvv
-    Citizen.Wait(100000)
+    Citizen.Wait(DURATION)
 --^^^^^^^^^^^^^^^^
 --Time of effect
 --  after wait stop all effects
@@ -197,7 +197,7 @@ AddEventHandler('kypo-drug-effect:onMeth', function()
 	
     SetEntityHealth(GetPlayerPed(-1), 200)
 --vvvvvvvvvvvvvvvv
-    Citizen.Wait(100000)
+    Citizen.Wait(DURATION)
 --^^^^^^^^^^^^^^^^
 --Time of effect
 --  after wait stop all effects
@@ -234,7 +234,7 @@ AddEventHandler('kypo-drug-effect:onLsa', function()
 	
     SetEntityHealth(GetPlayerPed(-1), 200)
 --vvvvvvvvvvvvvvvv
-    Citizen.Wait(100000)
+    Citizen.Wait(DURATION)
 --^^^^^^^^^^^^^^^^
 --Time of effect
 --  after wait stop all effects
