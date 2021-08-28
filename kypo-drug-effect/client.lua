@@ -1,4 +1,4 @@
-DURATION = 60*1000*1.0
+DURATION = 60*1000*2.5
 ESX              = nil
 local PlayerData = {}
 
