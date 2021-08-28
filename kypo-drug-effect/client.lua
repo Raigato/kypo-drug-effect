@@ -81,9 +81,6 @@ AddEventHandler('kypo-drug-effect:onWeed', function()
     SetPedIsDrunk(playerPed, true)
     AnimpostfxPlay("ChopVision", 10000001, true)
     ShakeGameplayCam("DRUNK_SHAKE", 1.0)
-	
-    SetEntityHealth(GetPlayerPed(-1), 200)
-    SetPedArmour(PlayerPedId(), 50)
 --vvvvvvvvvvvvvvvv
     Citizen.Wait(DURATION)
 --^^^^^^^^^^^^^^^^
@@ -119,9 +116,6 @@ AddEventHandler('kypo-drug-effect:onHeroin', function()
     SetPedIsDrunk(playerPed, true)
     AnimpostfxPlay("HeistCelebPass", 10000001, true)
     ShakeGameplayCam("DRUNK_SHAKE", 3.0)
-	
-    SetEntityHealth(GetPlayerPed(-1), 150)
-    SetPedArmour(PlayerPedId(), 100)
 --vvvvvvvvvvvvvvvv
     Citizen.Wait(DURATION)
 --^^^^^^^^^^^^^^^^
@@ -157,8 +151,6 @@ AddEventHandler('kypo-drug-effect:onLsd', function()
     SetTimecycleModifier("spectator5")
     AnimpostfxPlay("Rampage", 10000001, true)
     ShakeGameplayCam("DRUNK_SHAKE", 1.5)
-	
-    SetEntityHealth(GetPlayerPed(-1), 200)
 --vvvvvvvvvvvvvvvv
     Citizen.Wait(DURATION)
 --^^^^^^^^^^^^^^^^
@@ -194,8 +186,6 @@ AddEventHandler('kypo-drug-effect:onMeth', function()
     SetTimecycleModifier("spectator5")
     AnimpostfxPlay("SuccessMichael", 10000001, true)
     ShakeGameplayCam("DRUNK_SHAKE", 1.5)
-	
-    SetEntityHealth(GetPlayerPed(-1), 200)
 --vvvvvvvvvvvvvvvv
     Citizen.Wait(DURATION)
 --^^^^^^^^^^^^^^^^
@@ -231,8 +221,6 @@ AddEventHandler('kypo-drug-effect:onLsa', function()
     SetTimecycleModifier("spectator5")
     AnimpostfxPlay("Rampage", 10000001, true)
     ShakeGameplayCam("DRUNK_SHAKE", 1.5)
-	
-    SetEntityHealth(GetPlayerPed(-1), 200)
 --vvvvvvvvvvvvvvvv
     Citizen.Wait(DURATION)
 --^^^^^^^^^^^^^^^^
