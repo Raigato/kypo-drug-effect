@@ -149,6 +149,37 @@ function heroin()
   SetTimecycleModifierStrength(0.0)
 end
 
+function ecstasy()
+  local playerPed = GetPlayerPed(-1)
+  local playerPed = PlayerPedId()
+  
+  RequestAnimSet("move_m@buzzed") 
+  while not HasAnimSetLoaded("move_m@buzzed") do
+    Citizen.Wait(0)
+  end    
+  DisplayNotification('You took some LSD!')
+  TaskStartScenarioInPlace(playerPed, "WORLD_HUMAN_SMOKING_POT", 0, 1)
+  Citizen.Wait(3000)
+  ClearPedTasksImmediately(playerPed)
+  SetPedMotionBlur(playerPed, true)
+  SetPedMovementClipset(playerPed, "move_m@buzzed", true)
+  SetPedIsDrunk(playerPed, true)
+  SetTimecycleModifier("spectator5")
+  AnimpostfxPlay("DMT_flight", 10000001, true)
+  ShakeGameplayCam("DRUNK_SHAKE", 1.5)
+--vvvvvvvvvvvvvvvv
+  Citizen.Wait(DURATION)
+--^^^^^^^^^^^^^^^^
+--Time of effect
+--  after wait stop all effects
+  SetPedIsDrunk(GetPlayerPed(-1), false)		
+  SetPedMotionBlur(playerPed, false)
+  ResetPedMovementClipset(GetPlayerPed(-1))
+  AnimpostfxStopAll()
+  ShakeGameplayCam("DRUNK_SHAKE", 0.0)
+  SetTimecycleModifierStrength(0.0)
+end
+
 function lsd()
   local playerPed = GetPlayerPed(-1)
   local playerPed = PlayerPedId()
@@ -267,6 +298,9 @@ AddEventHandler('kypo-drug-effect:onWeed', weed)
 RegisterNetEvent('kypo-drug-effect:onHeroin')
 AddEventHandler('kypo-drug-effect:onHeroin', heroin)
 
+RegisterNetEvent('kypo-drug-effect:onEcstasy')
+AddEventHandler('kypo-drug-effect:onEcstasy', ecstasy)
+
 RegisterNetEvent('kypo-drug-effect:onLsd')
 AddEventHandler('kypo-drug-effect:onLsd', lsd)
 
@@ -294,6 +328,10 @@ end, false)
 
 RegisterCommand("heroin", function(source,args,rawCommand)
   heroin()
+end, false)
+
+RegisterCommand("ecstasy", function(source,args,rawCommand)
+  ecstasy()
 end, false)
 
 RegisterCommand("lsd", function(source,args,rawCommand)
