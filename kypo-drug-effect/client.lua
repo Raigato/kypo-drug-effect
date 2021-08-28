@@ -192,7 +192,6 @@ function meth()
 end
 
 function lsa()
-  
   local playerPed = GetPlayerPed(-1)
   local playerPed = PlayerPedId()
   
@@ -247,4 +246,24 @@ AddEventHandler('kypo-drug-effect:onLsa', lsa)
 -- // COMMANDS
 RegisterCommand("coke", function(source,args,rawCommand)
   coke()
+end, false)
+
+RegisterCommand("weed", function(source,args,rawCommand)
+  weed()
+end, false)
+
+RegisterCommand("heroin", function(source,args,rawCommand)
+  heroin()
+end, false)
+
+RegisterCommand("lsd", function(source,args,rawCommand)
+  lsd()
+end, false)
+
+RegisterCommand("meth", function(source,args,rawCommand)
+  meth()
+end, false)
+
+RegisterCommand("lsa", function(source,args,rawCommand)
+  lsa()
 end, false)
