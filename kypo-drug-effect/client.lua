@@ -82,8 +82,6 @@ function weed()
 --^^^^^^^^^^^^^^^^
 --Time of effect
 --  after wait stop all effects
-    SetPedMoveRateOverride(PlayerId(),1.0)
-    SetRunSprintMultiplierForPlayer(PlayerId(),1.0)
     SetPedIsDrunk(GetPlayerPed(-1), false)		
     SetPedMotionBlur(playerPed, false)
     ResetPedMovementClipset(GetPlayerPed(-1))
@@ -115,8 +113,6 @@ function heroin()
 --^^^^^^^^^^^^^^^^
 --Time of effect
 --  after wait stop all effects
-    SetPedMoveRateOverride(PlayerId(),1.0)
-    SetRunSprintMultiplierForPlayer(PlayerId(),1.0)
     SetPedIsDrunk(GetPlayerPed(-1), false)		
     SetPedMotionBlur(playerPed, false)
     ResetPedMovementClipset(GetPlayerPed(-1))
@@ -148,8 +144,6 @@ function lsd()
 --^^^^^^^^^^^^^^^^
 --Time of effect
 --  after wait stop all effects
-    SetPedMoveRateOverride(PlayerId(),1.0)
-    SetRunSprintMultiplierForPlayer(PlayerId(),1.0)
     SetPedIsDrunk(GetPlayerPed(-1), false)		
     SetPedMotionBlur(playerPed, false)
     ResetPedMovementClipset(GetPlayerPed(-1))
@@ -181,8 +175,6 @@ function meth()
 --^^^^^^^^^^^^^^^^
 --Time of effect
 --  after wait stop all effects
-    SetPedMoveRateOverride(PlayerId(),1.0)
-    SetRunSprintMultiplierForPlayer(PlayerId(),1.0)
     SetPedIsDrunk(GetPlayerPed(-1), false)		
     SetPedMotionBlur(playerPed, false)
     ResetPedMovementClipset(GetPlayerPed(-1))
@@ -214,8 +206,6 @@ function lsa()
 --^^^^^^^^^^^^^^^^
 --Time of effect
 --  after wait stop all effects
-    SetPedMoveRateOverride(PlayerId(),1.0)
-    SetRunSprintMultiplierForPlayer(PlayerId(),1.0)
     SetPedIsDrunk(GetPlayerPed(-1), false)		
     SetPedMotionBlur(playerPed, false)
     ResetPedMovementClipset(GetPlayerPed(-1))
@@ -223,6 +213,17 @@ function lsa()
     ShakeGameplayCam("DRUNK_SHAKE", 0.0)
     SetTimecycleModifierStrength(0.0)
 end
+
+function sober()
+  local playerPed = GetPlayerPed(-1)
+  local playerPed = PlayerPedId()
+
+  SetPedIsDrunk(GetPlayerPed(-1), false)		
+  SetPedMotionBlur(playerPed, false)
+  ResetPedMovementClipset(GetPlayerPed(-1))
+  AnimpostfxStopAll()
+  ShakeGameplayCam("DRUNK_SHAKE", 0.0)
+  SetTimecycleModifierStrength(0.0)
 
 -- // EVENTS
 RegisterNetEvent('kypo-drug-effect:onCoke')
@@ -242,6 +243,9 @@ AddEventHandler('kypo-drug-effect:onMeth', meth)
 
 RegisterNetEvent('kypo-drug-effect:onLsa')
 AddEventHandler('kypo-drug-effect:onLsa', lsa)
+
+RegisterNetEvent('kypo-drug-effect:onSober')
+AddEventHandler('kypo-drug-effect:onSober', sober)
 
 -- // COMMANDS
 RegisterCommand("coke", function(source,args,rawCommand)
@@ -266,4 +270,8 @@ end, false)
 
 RegisterCommand("lsa", function(source,args,rawCommand)
   lsa()
+end, false)
+
+RegisterCommand("sober", function(source,args,rawCommand)
+  sober()
 end, false)
