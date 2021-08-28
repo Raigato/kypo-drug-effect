@@ -68,7 +68,7 @@ function coke()
       Citizen.Wait(0)
     end    
     DisplayNotification('You took some coke!')
-    TaskStartScenarioInPlace(playerPed, "WORLD_HUMAN_SUPERHERO", 0, 1)
+    TaskStartScenarioInPlace(playerPed, "WORLD_HUMAN_STUPOR", 0, 1)
     Citizen.Wait(3000)
     ClearPedTasksImmediately(playerPed)
     SetTimecycleModifier("spectator5")
